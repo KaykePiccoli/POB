@@ -1,4 +1,4 @@
-package Exercicios19_08;
+package exercicios.exercicios01;
 import java.util.Scanner;
 
 public class ConversorTemperatura {
