@@ -1,5 +1,4 @@
 package exercicios.exercicios02;
-package exercicios.exercicios02;
 import java.util.Scanner;
 
 public class SituacaoAluno {

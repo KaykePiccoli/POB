@@ -1,8 +1,7 @@
 package exercicios.exercicios02;
-package exercicios.exercicios02;
 import java.util.Scanner;
 
-public class TipoTriangulos{
+public class TipoTriangulo{
    public static void main(String[] args){
        Scanner scanner = new Scanner(System.in);
            System.out.println("Informe o lado A de um triangulo: ");
