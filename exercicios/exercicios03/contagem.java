@@ -23,4 +23,5 @@ public class contagem {
     }
     System.out.println("A quantidade de numero pares é: " + par + " e a de números impares é: " + impar);
     }
+
 }
