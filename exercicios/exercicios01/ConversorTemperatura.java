@@ -10,6 +10,6 @@ public class ConversorTemperatura {
         double fahrenheit;
         fahrenheit = (celsius*1.8)+32;
         System.out.println("A temperatura em Fahrenheit e:" + fahrenheit);
-
+        scanner.close();
     }
 }

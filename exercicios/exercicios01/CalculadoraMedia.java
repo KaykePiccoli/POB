@@ -14,5 +14,6 @@ public class CalculadoraMedia {
 
         double media = (nota1+nota2+nota3)/3;
         System.out.println("Sua media final: " + media);
+        scanner.close();
     }
 }

@@ -14,5 +14,6 @@ public class CalculadoraInss {
         double inss = (valorBruto * 10)/ 100;
         int valorLiquido = valorBruto - (int)inss;
         System.out.println("Seu salario e: " + valorLiquido);
+        scanner.close();
     }
 }

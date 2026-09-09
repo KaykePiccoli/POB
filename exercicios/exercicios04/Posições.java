@@ -19,7 +19,7 @@ public class Posições{
         //ajustando as posições corretamente
         posMaior++;
         posMenor++;
-        System.out.println("A maior valor é " + maior + " e se encontra na posição " + posMaior);
-        System.out.println("A menor valor é " + menor + " e se encontra na posição " + posMenor);
+        System.out.println("O maior valor é " + maior + " e se encontra na posição " + posMaior);
+        System.out.println("O menor valor é " + menor + " e se encontra na posição " + posMenor);
     }
 }

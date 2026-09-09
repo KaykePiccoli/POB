@@ -11,6 +11,6 @@ public class ConversorTempo {
         int minutos = (segundos%3600)/60;
         int segundosFinal = (segundos%3600)%60;
         System.out.println("O tempo em horas, minutos e segundos e: " + horas + " horas " + minutos + " minutos e " + segundosFinal + " segundos");
-
+        scanner.close();
     }
 }

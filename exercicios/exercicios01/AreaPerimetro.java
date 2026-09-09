@@ -14,7 +14,7 @@ public class AreaPerimetro {
         int perimetro = (base+altura)*2;
         System.out.println("A area do retangulo e:" + area);
         System.out.println("O perimetro do retangulo e:" + perimetro);
-
+        scanner.close();
     }
 
 }
