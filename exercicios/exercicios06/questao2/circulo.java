@@ -1,8 +1,9 @@
-public class Circulo {
+package exercicios.exercicios06.questao2;
+public class circulo {
 
     private double raio;
 
-    public Circulo(double raio) {
+    public circulo(double raio) {
         this.raio = raio;
     }
 

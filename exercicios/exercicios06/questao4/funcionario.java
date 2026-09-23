@@ -1,10 +1,11 @@
-public class Funcionario {
+package exercicios.exercicios06.questao4;
+public class funcionario {
 
     private String nome;
     private String cargo;
     private double salarioBruto;
 
-    public Funcionario(String nome, String cargo, double salarioBruto) {
+    public funcionario(String nome, String cargo, double salarioBruto) {
         this.nome = nome;
         this.cargo = cargo;
         this.salarioBruto = salarioBruto;

@@ -1,8 +1,9 @@
+package exercicios.exercicios06.questao4;
 public class Main {
 
     public static void main(String[] args) {
 
-        Funcionario funcionario = new Funcionario("João Pereira", "Analista de Sistemas", 3000.0);
+        funcionario funcionario = new funcionario("João Pereira", "Analista de Sistemas", 3000.0);
 
         System.out.println("Nome: " + funcionario.getNome());
         System.out.println("Cargo: " + funcionario.getCargo());

@@ -1,15 +1,16 @@
+package exercicios.exercicios06.questao2;
 import java.util.Scanner;
 
-public class Main {
+public class main {
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor do raio: ");
         double raio = scanner.nextDouble();
 
-        Circulo circulo = new Circulo(raio);
+        circulo circulo = new circulo(raio);
 
         double area = circulo.calcularArea();
         double perimetro = circulo.calcularPerimetro();

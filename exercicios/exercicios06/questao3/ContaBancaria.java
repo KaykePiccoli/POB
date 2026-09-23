@@ -1,10 +1,11 @@
-public class ContaBancaria {
+package exercicios.exercicios06.questao3;
+public class contaBancaria {
 
     private String titular;
     private String numeroConta;
     private double saldo;
 
-    public ContaBancaria(String titular, String numeroConta) {
+    public contaBancaria(String titular, String numeroConta) {
         this.titular = titular;
         this.numeroConta = numeroConta;
         this.saldo = 0.0;
