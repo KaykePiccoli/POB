@@ -1,18 +1,33 @@
-public class Main {
+public class Funcionario {
 
-    public static void main(String[] args) {
+    private String nome;
+    private String cargo;
+    private double salarioBruto;
 
-        Funcionario funcionario = new Funcionario("João Pereira", "Analista de Sistemas", 3000.0);
+    public Funcionario(String nome, String cargo, double salarioBruto) {
+        this.nome = nome;
+        this.cargo = cargo;
+        this.salarioBruto = salarioBruto;
+    }
 
-        System.out.println("Nome: " + funcionario.getNome());
-        System.out.println("Cargo: " + funcionario.getCargo());
-        System.out.printf("Salário bruto antes do aumento: R$%.2f%n", funcionario.getSalarioBruto());
+    public void aplicarAumento(double porcentagem) {
+        double acrescimo = salarioBruto * (porcentagem / 100);
+        salarioBruto += acrescimo;
+    }
 
-        funcionario.aplicarAumento(10); // aumento de 10%
+    public double calcularSalarioLiquido(double descontoImposto) {
+        return salarioBruto - descontoImposto;
+    }
 
-        System.out.printf("Salário bruto após o aumento: R$%.2f%n", funcionario.getSalarioBruto());
+    public String getNome() {
+        return nome;
+    }
 
-        double salarioLiquido = funcionario.calcularSalarioLiquido(400.0);
-        System.out.printf("Salário líquido (após desconto de imposto): R$%.2f%n", salarioLiquido);
+    public String getCargo() {
+        return cargo;
+    }
+
+    public double getSalarioBruto() {
+        return salarioBruto;
     }
 }
