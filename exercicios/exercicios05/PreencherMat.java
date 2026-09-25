@@ -1,4 +1,4 @@
-package exercicios.exercicios05;
+  package exercicios.exercicios05;
 import java.util.Scanner;
 
 public class PreencherMat{
