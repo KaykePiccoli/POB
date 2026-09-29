@@ -1,8 +1,8 @@
 package exercicios.exercicios08.questao01;
 
-public class Main {
+public class main {
 
-    public static void main(String[] args) {
+    public static void Main (String[] args) {
 
         Carro carro = new Carro("Toyota", "Corolla", 4);
         Moto moto = new Moto("Honda", "CB 500", 500);

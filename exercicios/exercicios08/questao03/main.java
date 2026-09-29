@@ -1,12 +1,12 @@
 package exercicios.exercicios08.questao03;
 
-public class Main {
+public class main {
 
     public static void processarEnvio(Notificacao notificacao, String texto) {
         notificacao.enviar(texto);
     }
 
-    public static void main(String[] args) {
+    public static void Main (String[] args) {
 
         Notificacao email = new EmailNotificacao("kayke@email.com");
         Notificacao sms = new SmsNotificacao("11999999999");

@@ -1,17 +1,16 @@
-package exercicios.exericios08.questao02;
+package exercicios.exercicios08.questao02;
 
-public class Gerente extends Funcionario{
-    private Double bonusFixo;
+public class Gerente extends Funcionario {
 
-    public Gerente(String nome, Double salarioBase, double bonusFixo){
+    private double bonusFixo;
+
+    public Gerente(String nome, double salarioBase, double bonusFixo) {
         super(nome, salarioBase);
-        this.bonusFixo=bonusFixo;
+        this.bonusFixo = bonusFixo;
     }
 
-    @override
-    public void calcularsalario(){
-        
-        salarioBase= bonusFixo+salarioBase;
-        return salarioBase;
+    @Override
+    public double calcularSalario() {
+        return salarioBase + bonusFixo;
     }
 }
