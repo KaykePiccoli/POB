@@ -6,19 +6,14 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class PessoasView{
-// Instância do controlador que gerencia a lógica de negócio
     private PessoasController controller;
     
-    // Scanner usado para ler entradas do usuário
     private Scanner scanner;
 
-    // Construtor que recebe o controller como dependência e inicializa o scanner
     public PessoasView(PessoasController controller) {
         this.controller = controller;
         this.scanner = new Scanner(System.in);
     }
-
-    // Método que exibe o menu principal e executa ações com base na escolha do usuário
     public void exibirMenu() {
         int opcao;
         do {
@@ -28,25 +23,23 @@ public class PessoasView{
             System.out.println("3. Alterar Pessoa");
             System.out.println("4. Excluir Pessoa");
             System.out.println("0. Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("Escolha uma opcao: ");
             
-            // Lê a opção do usuário com tratamento
             opcao = capturarInteiro();
 
-            // Executa a ação correspondente
             switch (opcao) {
                 case 1 -> adicionarPessoas();
                 case 2 -> listarPessoas();
                 case 3 -> alterarPessoas();
                 case 4 -> excluirPessoas();
                 case 0 -> System.out.println("Encerrando o programa.");
-                default -> System.out.println("Opção inválida. Tente novamente.");
+                default -> System.out.println("Opcao invalida. Tente novamente.");
             }
-        } while (opcao != 0); // Repete até o usuário escolher sair
+        } while (opcao != 0); 
     }
 
     private void adicionarPessoas() {
-        int id = capturarId(); // Lê o ID
+        int id = capturarId(); 
         String nome = capturarString("Nome da Pessoa: ");
         int idade = capturarIdade("Idade da Pessoa: ");
         double altura = capturarDouble("Altura da Pessoa: ");
@@ -55,89 +48,83 @@ public class PessoasView{
         System.out.println("Pessoa adicionado com sucesso!");
     }
 
-    // Exibe todos os produtos cadastrados
     private void listarPessoas() {
         for (Pessoas pessoas : controller.listarPessoas()) {
             System.out.println("ID: " + pessoas.getId() + ", Nome: " + pessoas.getNome() + ", Idade: " + pessoas.getIdade() + ", Altura: " + pessoas.getAltura());
         }
     }
 
-    // Permite alterar um produto existente -------------------------------------------------------------------
     private void alterarPessoas() {
         int id = capturarId();
         String novoNome = capturarString("Novo Nome: ");
-        double novoValor = capturarDouble("Novo Valor: ");
+        int novoIdade = capturarInt("Nova Idade: ");
+        double novoAltura = capturarDouble("Nova Altura: ");
 
-        if (controller.alterarProduto(id, novoNome, novoValor)) {
+
+        if (controller.alterarPessoas(id, novoNome, novoIdade, novoAltura)) {
             System.out.println("Produto alterado com sucesso!");
         } else {
-            System.out.println("Produto com ID " + id + " não encontrado.");
+            System.out.println("Produto com ID " + id + " nao encontrado.");
         }
     }
 
-    // Permite excluir um produto existente
-    private void excluirProduto() {
+    private void excluirPessoas() {
         int id = capturarId();
-        if (controller.excluirProduto(id)) {
-            System.out.println("Produto excluído com sucesso!");
+        if (controller.excluirPessoas(id)) {
+            System.out.println("Pessoa excluida com sucesso!");
         } else {
-            System.out.println("Produto com ID " + id + " não encontrado.");
+            System.out.println("Pessoa com ID " + id + " nao encontrado.");
         }
     }
 
-    // Lê e retorna um ID de produto
     private int capturarId() {
         return capturarInteiro("ID do Produto: ");
     }
 
-    // Captura um número inteiro sem mensagem (usado no menu)
     private int capturarInteiro() {
         return capturarInteiro(null);
     }
 
-    // Captura um número inteiro com tratamento de erro e mensagem opcional
     private int capturarInteiro(String mensagem) {
         int valor = 0;
         boolean valido;
         do {
             try {
                 if (mensagem != null) {
-                    System.out.print(mensagem); // Exibe a mensagem, se houver
+                    System.out.print(mensagem); 
                 }
-                valor = scanner.nextInt(); // Lê número inteiro
+                valor = scanner.nextInt(); 
                 valido = true;
             } catch (InputMismatchException e) {
-                System.out.println("Entrada inválida. Por favor, insira um número inteiro.");
+                System.out.println("Entrada invalida. Por favor, insira um numero inteiro.");
                 valido = false;
-                scanner.nextLine(); // Limpa o buffer do scanner
+                scanner.nextLine(); 
             }
         } while (!valido);
-        scanner.nextLine(); // Limpa o buffer após leitura correta
+        scanner.nextLine(); 
         return valor;
     }
 
-    // Captura um número decimal com tratamento de erro
     private double capturarDouble(String mensagem) {
         double valor = 0.0;
         boolean valido;
         do {
             try {
                 System.out.print(mensagem);
-                valor = scanner.nextDouble(); // Lê número decimal
+                valor = scanner.nextDouble(); 
                 valido = true;
             } catch (InputMismatchException e) {
-                System.out.println("Entrada inválida. Por favor, insira um número decimal.");
+                System.out.println("Entrada invalida. Por favor, insira um numero decimal.");
                 valido = false;
-                scanner.nextLine(); // Limpa o buffer
+                scanner.nextLine(); 
             }
         } while (!valido);
-        scanner.nextLine(); // Limpa o buffer
+        scanner.nextLine(); 
         return valor;
     }
 
-    // Captura uma string após exibir uma mensagem
     private String capturarString(String mensagem) {
         System.out.print(mensagem);
-        return scanner.nextLine(); // Lê a linha inteira
+        return scanner.nextLine(); 
     }
 }
